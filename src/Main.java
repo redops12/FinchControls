@@ -8,8 +8,5 @@ public class Main {
 		f.setFocusable(true);
 		f.requestFocusInWindow();
 		f.setVisible(true);
-		while (true) {
-			System.out.println(f.getRed());
-		}
 	}
 }
