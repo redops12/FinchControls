@@ -60,22 +60,33 @@ public class FinchControls extends JFrame implements KeyListener{
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_W) {
-			y = 255;
-		}
-		if (e.getKeyCode() == KeyEvent.VK_S) {
-			y = -255;
-		}
-		if (e.getKeyCode() == KeyEvent.VK_A) {
-			turn = 255;
-		}
-		if (e.getKeyCode() == KeyEvent.VK_D) {
-			turn = -255;
-		}
 		if (e.isShiftDown()) {
-			y /= 2;
-			turn /= 2;
-		} 
+			if (e.getKeyCode() == KeyEvent.VK_W) {
+				y = 128;
+			}
+			if (e.getKeyCode() == KeyEvent.VK_S) {
+				y = -128;
+			}
+			if (e.getKeyCode() == KeyEvent.VK_A) {
+				turn = 128;
+			}
+			if (e.getKeyCode() == KeyEvent.VK_D) {
+				turn = -128;
+			}
+		} else {
+			if (e.getKeyCode() == KeyEvent.VK_W) {
+				y = 255;
+			}
+			if (e.getKeyCode() == KeyEvent.VK_S) {
+				y = -255;
+			}
+			if (e.getKeyCode() == KeyEvent.VK_A) {
+				turn = 255;
+			}
+			if (e.getKeyCode() == KeyEvent.VK_D) {
+				turn = -255;
+			}
+		}
 		
 		if (y+turn>255) {
 			rightWheel = 255;
